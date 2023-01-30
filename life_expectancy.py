@@ -34,4 +34,19 @@ numerical_columns = numerical_features.columns
 ct = ColumnTransformer([("only numeric", StandardScaler(), numerical_columns)], remainder='passthrough')
 features_train_scaled = ct.fit_transform(features_train)
 features_test_scaled = ct.fit_transform(features_test)
+
+## Building the model
+# create an instance of sequential model
+my_model = Sequential()
+# create input layer, shape is number of features in dataset
+input = InputLayer(input_shape = (features.shape[1],))
+# add input layer to my model
+my_model.add(input)
+# add hidden layer with relu activation function, 64 hidden units
+# WHY 64
+my_model.add(Dense(64, activation = 'relu'))
+# add output layer - single output regression, 1 neuron
+# my_model.add(Dense(1))
+# print model summary
+print(my_model.summary())
 print('done')
