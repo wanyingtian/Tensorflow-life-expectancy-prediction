@@ -3,8 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import Normalizer
 from sklearn.compose import ColumnTransformer
-import tensorflow
-import keras
 from tensorflow import keras 
 from keras.models import Sequential
 from keras.layers import InputLayer
